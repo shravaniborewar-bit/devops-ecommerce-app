@@ -12,7 +12,6 @@ pipeline {
         stage('Test Application') {
             steps {
                 echo 'Running application health check test...'
-                // Verifies server code file exists and is valid syntax
                 sh 'ls -la server.js'
             }
         }
