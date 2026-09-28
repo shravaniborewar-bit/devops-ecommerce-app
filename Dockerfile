@@ -1,14 +1,13 @@
-# Use lightweight Node image
 FROM node:18-alpine
 
-# Create app directory inside the container
 WORKDIR /usr/src/app
 
-# Copy application file
+# Copy package requirements and server code
 COPY server.js ./
 
-# Expose port 3000
+# Install express directly inside the container
+RUN npm init -y && npm install express
+
 EXPOSE 3000
 
-# Command to start the app inside the container
 CMD ["node", "server.js"]
